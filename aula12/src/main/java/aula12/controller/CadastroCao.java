@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 import aula12.model.Animal;
 import aula12.model.Cao;
@@ -35,9 +34,6 @@ public class CadastroCao extends HttpServlet {
 			
 			RepositorioCao rep = new RepositorioCao();
 			rep.incluir((Cao)cao);
-			
-			List<Animal> lista = rep.listar();
-			request.setAttribute("lista", lista);
 			
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/sucesso.jsp");
 			rd.forward(request, response);
